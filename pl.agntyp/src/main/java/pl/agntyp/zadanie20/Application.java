@@ -1,4 +1,4 @@
-package pl.agntyp.zadanie20_1;
+package pl.agntyp.zadanie20;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

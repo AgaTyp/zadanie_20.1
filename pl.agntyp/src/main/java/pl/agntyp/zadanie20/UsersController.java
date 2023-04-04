@@ -1,6 +1,5 @@
-package pl.agntyp.zadanie20_1;
+package pl.agntyp.zadanie20;
 
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,23 +16,18 @@ public class UsersController implements ErrorController {
 
     public UsersController(UserRepository userRepository) {
         this.userRepository = userRepository;
-        User user = new User("Marek","Wilk",30);
-        User user1 = new User("Zofia","Kowalska",27);
-        User user2 = new User("Wojciech","Mak",36);
-        userRepository.add(user);
-        userRepository.add(user1);
-        userRepository.add(user2);
+
     }
 
     @RequestMapping("/add")
-    public String users(@RequestParam(name = "imie") String firstName,
-                        @RequestParam(name = "nazwisko", required = false, defaultValue = "") String lastName,
-                        @RequestParam(name = "wiek", required = false, defaultValue = "0") Integer age) {
+    public String addUsers(@RequestParam(name = "imie") String firstName,
+                           @RequestParam(name = "nazwisko", defaultValue = "") String lastName,
+                           @RequestParam(name = "wiek", defaultValue = "0") Integer age) {
 
-        if (Objects.equals(firstName, "")) {
+        if (Objects.equals(firstName, "") || firstName == null) {
             return "redirect:/error";
         } else {
-            User user = new User(firstName,lastName,age);
+            User user = new User(firstName, lastName, age);
             userRepository.add(user);
 
             return "redirect:/success.html";
@@ -41,7 +35,7 @@ public class UsersController implements ErrorController {
     }
 
     @RequestMapping("/error")
-    public String users(HttpServletRequest request) {
+    public String error() {
         return "redirect:/err.html";
     }
 

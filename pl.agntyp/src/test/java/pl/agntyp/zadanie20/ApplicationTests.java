@@ -1,4 +1,4 @@
-package pl.agntyp.zadanie20_1;
+package pl.agntyp.zadanie20;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

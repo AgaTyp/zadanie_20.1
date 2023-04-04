@@ -1,4 +1,4 @@
-package pl.agntyp.zadanie20_1;
+package pl.agntyp.zadanie20;
 
 public class User {
     private String firstName;
