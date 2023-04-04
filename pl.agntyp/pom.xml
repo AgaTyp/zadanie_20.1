@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>pl.agntyp</groupId>
-    <artifactId>zadanie20_1</artifactId>
+    <artifactId>zadanie20</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pl.agntyp</name>
     <description>pl.agntyp</description>
